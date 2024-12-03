@@ -1,0 +1,33 @@
+#include <stdio.h>
+
+
+    struct Aluno {
+    int matricula;
+    char nome[20];
+    float notas[3];
+};
+
+    int main() {
+    struct Aluno aluno;
+
+    printf("Digite o número de matrícula: ");
+    scanf("%d", &aluno.matricula);
+
+    printf("Digite o nome do aluno: ");
+    scanf(" %[^\n]", aluno.nome);
+
+    for (int i = 0;i<3; i++) {
+        printf("Digite a nota da prova %d: ", i + 1);
+        scanf("%f", &aluno.notas[i]);
+    }
+
+    
+    printf("\nDados do Aluno:\n");
+    printf("Matrícula: %d\n", aluno.matricula);
+    printf("Nome: %s\n", aluno.nome);
+    for (int i = 0;i<3; i++) {
+        printf("Nota da Prova %d: %.2f\n", i + 1, aluno.notas[i]);
+    }
+
+    return 0;
+}
