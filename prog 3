@@ -1,0 +1,54 @@
+#include <stdio.h>
+
+
+    struct Aluno {
+    int matricula;
+    char nome[20];
+    float notas[3];
+};
+
+    float calcularmedia(float notas[], int numnotas) {
+    float soma = 0;
+    for (int i = 0;i< numnotas; i++) {
+        soma += notas[i];
+    }
+    return soma / numnotas;
+}
+
+    int main() {
+    struct Aluno alunos[5];
+    float maiormedia = 0;
+    int indicemaiormedia = 0;
+
+    
+    for (int i = 0;i< 5; i++) {
+        printf("\nDigite os dados do aluno %d:\n", i + 1);
+        printf("Matrícula: ");
+        scanf("%d", &alunos[i].matricula);
+        printf("Nome: ");
+        scanf(" %[^\n]", alunos[i].nome);
+        for (int j = 0;j<3; j++) {
+            printf("Nota da prova %d: ", j + 1);
+            scanf("%f", &alunos[i].notas[j]);
+        }
+
+        
+        float media = calcularmedia(alunos[i].notas, 3);
+        if (media > maiormedia) {
+            maiormedia = media;
+            indicemaiormedia = i;
+        }
+    }
+
+    
+    printf("\nAluno com a maior média geral:\n");
+    printf("Nome: %s\n", alunos[indicemaiormedia].nome);
+    printf("Matrícula: %d\n", alunos[indicemaiormedia].matricula);
+    printf("Média: %.2f\n", maiormedia);
+    for (int j = 0;j<3; j++) {
+        printf("Nota da Prova %d: %.2f\n", j + 1, alunos[indicemaiormedia].notas[j]);
+    }
+
+    return 0;
+}
+
