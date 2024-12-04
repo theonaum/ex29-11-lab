@@ -1,0 +1,48 @@
+#include <stdio.h>
+
+
+    enum Diassem {
+    Domingo = 1,
+    Segunda,
+    Terca,
+    Quarta,
+    Quinta,
+    Sexta,
+    Sabado 
+};
+
+int main() {
+    int dia;
+
+    printf("Digite um número de 1 a 7 para o dia da semana: ");
+    scanf("%d", &dia);
+
+    
+    switch (dia) {
+        case Domingo:
+            printf("Domingo\n");
+            break;
+        case Segunda:
+            printf("Segunda-feira\n");
+            break;
+        case Terca:
+            printf("Terça-feira\n");
+            break;
+        case Quarta:
+            printf("Quarta-feira\n");
+            break;
+        case Quinta:
+            printf("Quinta-feira\n");
+            break;
+        case Sexta:
+            printf("Sexta-feira\n");
+            break;
+        case Sabado:
+            printf("Sábado\n");
+            break;
+        default:
+            printf("Número inválido. Digite um número de 1 a 7.\n");
+    }
+
+    return 0;
+}
