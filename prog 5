@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+
+    union Dado {
+    int inteiro;
+    float decimal;
+};
+
+    int main() {
+    union Dado valor;
+
+    
+    valor.inteiro = 69;
+    printf("Valor como inteiro: %d\n", valor.inteiro);
+    printf("Valor como float ): %.2f\n", valor.decimal);
+
+   
+    valor.decimal = 9.15;
+    printf("Valor como float: %.2f\n", valor.decimal);
+    printf("Valor como inteiro ): %d\n", valor.inteiro);
+
+    return 0;
+}
